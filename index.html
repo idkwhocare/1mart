@@ -9,21 +9,25 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.5); /* Set the background color with transparency */
-      backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; /* Set the background color */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     h1 {
       font-size: 24px;
-      color: white; /* Set the text color */
+      color: #333333; /* Set the text color */
       text-align: center;
+      margin-bottom: 10px;
     }
 
     #counter {
       font-size: 48px;
-      color: white; /* Set the text color */
+      color: #333333; /* Set the text color */
       text-align: center;
+      background-color: #ffffff; /* Set the background color */
+      padding: 10px;
+      border: 1px solid #cccccc; /* Add a border */
+      border-radius: 5px; /* Round the corners */
     }
   </style>
 </head>
@@ -48,20 +52,4 @@
 
       // Sayaç elementini güncelleyelim
       var counterElement = document.getElementById("counter");
-      counterElement.textContent = hours + " saat, " + minutes + " dakika, " + seconds + " saniye";
-    }
-
-    // Sayfa yüklendiğinde ve her saniye güncellemeler yapalım
-    window.onload = function() {
-      updateCounter();
-      setInterval(updateCounter, 1000);
-    };
-  </script>
-</body>
-</html>
-
-      setInterval(updateCounter, 1000);
-    };
-  </script>
-</body>
-</html>
+      counterElement.textContent = hours + " saat, " + minutes + " dakika
