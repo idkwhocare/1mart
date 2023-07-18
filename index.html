@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Sayaç Web Sitesi</title>
-  <link rel="stylesheet" href="https://unpkg.com/win95.css/dist/win95.css">
   <style>
     body {
       display: flex;
@@ -19,50 +18,33 @@
       width: 400px;
       height: 300px;
       background-color: #c0c0c0;
-      border: 2px solid #000000;
-      border-radius: 4px;
-      box-shadow: 4px 4px 0px #000000;
+      border: 4px solid #000000;
+      border-top-width: 25px;
+      border-radius: 6px;
+      box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
       overflow: hidden;
     }
 
     .window-bar {
       position: relative;
-      height: 20px;
+      width: 100%;
+      height: 25px;
       background-color: #000000;
-    }
-
-    .window-bar-buttons {
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: flex;
-      height: 100%;
-      padding: 0 2px;
-    }
-
-    .window-bar-button {
-      width: 16px;
-      height: 100%;
-      margin-left: 2px;
-      background-color: #808080;
+      padding: 4px 8px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 11px;
     }
 
     .window-content {
-      height: calc(100% - 20px);
-      padding: 10px;
+      padding: 8px;
       background-color: #ffffff;
-    }
-
-    .title {
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 10px;
-      color: #000000;
+      height: calc(100% - 25px);
+      overflow-y: auto;
     }
 
     .counter {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       text-align: center;
       padding: 10px;
@@ -71,20 +53,14 @@
       border: 2px solid #000000;
       border-radius: 4px;
       margin: 0 auto;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div class="window">
-    <div class="window-bar">
-      <div class="window-bar-buttons">
-        <div class="window-bar-button"></div>
-        <div class="window-bar-button"></div>
-        <div class="window-bar-button"></div>
-      </div>
-    </div>
+    <div class="window-bar">Sayaç Web Sitesi</div>
     <div class="window-content">
-      <div class="title">Sayaç Web Sitesi</div>
       <div class="counter">0 saat, 0 dakika, 0 saniye</div>
     </div>
   </div>
@@ -110,4 +86,5 @@
   </script>
 </body>
 </html>
+
 
