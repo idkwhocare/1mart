@@ -9,54 +9,60 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f0f0f0; /* Set the background color */
+      background-color: #f0f0f0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    h1 {
-      font-size: 24px;
-      color: #333333; /* Set the text color */
-      text-align: center;
-      margin-bottom: 10px;
+    .container {
+      background-color: #ffffff;
+      border: 1px solid #bfbfbf;
+      border-radius: 8px;
+      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 500px;
     }
 
-    #counter {
-      font-size: 48px;
-      color: #333333; /* Set the text color */
+    .title {
+      font-size: 24px;
+      font-weight: bold;
       text-align: center;
-      background-color: #ffffff; /* Set the background color */
+      margin-bottom: 20px;
+      color: #3b5998;
+    }
+
+    .counter {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
       padding: 20px;
-      border: 2px solid #bbbbbb; /* Add a border */
-      border-radius: 5px; /* Round the corners */
-      box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+      background-color: #e9ebee;
+      color: #3b5998;
+      border: 1px solid #bfbfbf;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>Sayaç Web Sitesi</h1>
+  <div class="container">
+    <div class="title">Sayaç Web Sitesi</div>
     <p>Aktif süre:</p>
-    <div id="counter">0 saat, 0 dakika, 0 saniye</div>
+    <div class="counter">0 saat, 0 dakika, 0 saniye</div>
   </div>
 
   <script>
-    // Tarih ve saat bilgisini almak için JavaScript kullanalım
     function updateCounter() {
-      var startDate = new Date("2023-03-01"); // Başlangıç tarihi
-      var currentDate = new Date(); // Şu anki tarih ve saat
+      var startDate = new Date("2023-03-01");
+      var currentDate = new Date();
 
-      // Zaman farkını hesaplayalım
       var diff = Math.abs(currentDate - startDate);
-      var hours = Math.floor(diff / (1000 * 60 * 60)); // Saat hesaplama
-      var minutes = Math.floor((diff / (1000 * 60)) % 60); // Dakika hesaplama
-      var seconds = Math.floor((diff / 1000) % 60); // Saniye hesaplama
+      var hours = Math.floor(diff / (1000 * 60 * 60));
+      var minutes = Math.floor((diff / (1000 * 60)) % 60);
+      var seconds = Math.floor((diff / 1000) % 60);
 
-      // Sayaç elementini güncelleyelim
-      var counterElement = document.getElementById("counter");
+      var counterElement = document.querySelector(".counter");
       counterElement.textContent = hours + " saat, " + minutes + " dakika, " + seconds + " saniye";
     }
 
-    // Sayfa yüklendiğinde ve her saniye güncellemeler yapalım
     window.onload = function() {
       updateCounter();
       setInterval(updateCounter, 1000);
@@ -64,4 +70,3 @@
   </script>
 </body>
 </html>
-
