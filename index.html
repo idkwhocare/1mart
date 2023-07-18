@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sayaç Web Sitesi</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    #counter {
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Sayaç Web Sitesi</h1>
+    <p>Aktif süre:</p>
+    <div id="counter">0 saat, 0 dakika, 0 saniye</div>
+  </div>
+
+  <script>
+    // Tarih ve saat bilgisini almak için JavaScript kullanalım
+    function updateCounter() {
+      var startDate = new Date("2023-03-01"); // Başlangıç tarihi
+      var currentDate = new Date(); // Şu anki tarih ve saat
+
+      // Zaman farkını hesaplayalım
+      var diff = Math.abs(currentDate - startDate);
+      var hours = Math.floor(diff / (1000 * 60 * 60)); // Saat hesaplama
+      var minutes = Math.floor((diff / (1000 * 60)) % 60); // Dakika hesaplama
+      var seconds = Math.floor((diff / 1000) % 60); // Saniye hesaplama
+
+      // Sayaç elementini güncelleyelim
+      var counterElement = document.getElementById("counter");
+      counterElement.textContent = hours + " saat, " + minutes + " dakika, " + seconds + " saniye";
+    }
+
+    // Sayfa yüklendiğinde ve her saniye güncellemeler yapalım
+    window.onload = function() {
+      updateCounter();
+      setInterval(updateCounter, 1000);
+    };
+  </script>
+</body>
+</html>
